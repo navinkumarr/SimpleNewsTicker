@@ -3,7 +3,7 @@
 You can manage the tickers from the options provided in the admin panel to create group of tickers and add tickers to your groups and display it on the website .
 There are many options available to control the behaviour of ticker which is based on bxslider jquery plugin.
 
-#### You can download this module from magento connect from <a href="http://www.magentocommerce.com/magento-connect/simple-news-ticker.html">here</a>
+#### You can download this module from <a target="_blank" href="http://www.magentocommerce.com/magento-connect/simple-news-ticker.html">here</a>
 
 #Set Up
 
