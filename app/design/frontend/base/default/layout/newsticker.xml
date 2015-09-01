@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <default>
+    	<reference name="head">
+    		<action method="addItem">
+			    <type>skin_css</type>
+			    <name>css/jquery.bxslider.css</name>
+			</action>
+			<action method="addItem" ifconfig="yantrakaar_newsticker/yantrakaar_newsticker_settings/jquery">
+			    <type>skin_js</type>
+			    <name>js/newsticker/jquery-1.11.0.min.js</name>
+			</action>
+			<action method="addItem" ifconfig="yantrakaar_newsticker/yantrakaar_newsticker_easing/enabled">
+			    <type>skin_js</type>
+			    <name>js/newsticker/jquery.easing.1.3.js</name>
+			</action>
+			<action method="addItem" ifconfig="yantrakaar_newsticker/yantrakaar_newsticker_vids/enabled">
+			    <type>skin_js</type>
+			    <name>js/newsticker/jquery.fitvids.js</name>
+			</action>
+			<action method="addItem">
+			    <type>skin_js</type>
+			    <name>js/newsticker/jquery.bxslider.min.js</name>
+			</action>
+    	</reference>
+    	<reference name="breadcrumbs">
+    		<block name="newsticker" type="newsticker/newsticker" template="newsticker/newsticker.phtml" />
+    	</reference>		
+    </default>
+</layout>

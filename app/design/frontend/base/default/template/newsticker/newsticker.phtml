@@ -1,0 +1,85 @@
+<?php
+	$ticker_helper = Mage::helper('newsticker');
+	$config = Mage::getModel("newsticker/config");
+	$easing = $config->getEasingEasing();
+?>
+<?php if($ticker_helper->isEnabled()):?>
+<?php	
+	/**
+	 *  get tickers array based on group id
+	 */ 
+	$tickers = $ticker_helper->getTickerData();
+?>
+	<?php if(!empty($tickers)):?>
+		<ul class="bxslider">
+		<?php foreach($tickers as $ticker):?>
+		  <li><?php echo $this->__($ticker['ticker_text']);?></li>
+		<?php endforeach;?>
+		</ul>
+		<script type="text/javascript">
+		jQuery('.bxslider').bxSlider({
+				// GENERAL
+				mode: '<?php echo $config->getGeneralMode();?>',
+				slideSelector: '<?php echo $config->getGeneralSlideselector();?>',
+				infiniteLoop: <?php echo $config->getGeneralInfiniteloop();?>,
+				hideControlOnEnd: <?php echo $config->getGeneralHidecontrolonend();?>,
+				speed: <?php echo $config->getGeneralSpeed();?>,
+				easing: <?php echo !empty($easing) ? sprintf("'%s'",$easing) : 'null';?>,
+				slideMargin: <?php echo $config->getGeneralSlidemargin();?>,
+				startSlide: <?php echo $config->getGeneralStartslide();?>,
+				randomStart: <?php echo $config->getGeneralRandomstart();?>,
+				captions: <?php echo $config->getGeneralCaptions();?>,
+				ticker: <?php echo $config->getGeneralTicker();?>,
+				tickerHover : <?php echo $config->getGeneralTickerhover();?>,
+				adaptiveHeight: <?php echo $config->getGeneralAdaptiveheight();?>,
+				adaptiveHeightSpeed: <?php echo $config->getGeneralAdaptiveheightspeed();?>,
+				video: <?php echo $config->getVidsEnabled();?>,
+				useCSS: <?php echo $config->getGeneralUsecss();?>,
+				preloadImages: '<?php echo $config->getGeneralPreloadimages();?>',
+				responsive: <?php echo $config->getGeneralResponsive();?>,
+		
+				// TOUCH
+				touchEnabled: <?php echo $config->getGeneralTouchenabled();?>,
+				swipeThreshold: <?php echo $config->getGeneralSwipethreshold();?>,
+				oneToOneTouch: <?php echo $config->getGeneralOnetoonetouch();?>,
+				preventDefaultSwipeX: <?php echo $config->getGeneralPreventdefaultswipex();?>,
+				preventDefaultSwipeY: <?php echo $config->getGeneralPreventdefaultswipey();?>,
+		
+				// PAGER
+				pager: <?php echo $config->getPagerEnabled();?>,
+				pagerType: '<?php echo $config->getPagerType();?>',
+				pagerShortSeparator: '<?php echo $config->getPagerShortseparator();?>',
+				pagerSelector: null,
+				buildPager: null,
+				pagerCustom: null,
+		
+				// CONTROLS
+				controls: <?php echo $config->getControlsEnabled();?>,
+				nextText: '<?php echo $config->getControlsNexttext();?>',
+				prevText: '<?php echo $config->getControlsPrevtext();?>',
+				nextSelector: null,
+				prevSelector: null,
+				autoControls: <?php echo $config->getControlsAutocontrols();?>,
+				startText: '<?php echo $config->getControlsStarttext();?>',
+				stopText: '<?php echo $config->getControlsStoptext();?>',
+				autoControlsCombine: <?php echo $config->getControlsAutocontrolscombine();?>,
+				autoControlsSelector: null,
+		
+				// AUTO
+				auto: <?php echo $config->getAutoEnabled();?>,
+				pause: <?php echo $config->getAutoPause();?>,
+				autoStart: <?php echo $config->getAutoAutostart();?>,
+				autoDirection: '<?php echo $config->getAutoAutodirection();?>',
+				autoHover: <?php echo $config->getAutoAutohover();?>,
+				autoDelay: <?php echo $config->getAutoAutodelay();?>,
+		
+				// CAROUSEL
+				minSlides: <?php echo $config->getCarouselMinslides();?>,
+				maxSlides: <?php echo $config->getCarouselMaxslides();?>,
+				moveSlides: <?php echo $config->getCarouselMoveslides();?>,
+				slideWidth: <?php echo $config->getCarouselSlidewidth();?>,
+			   
+			});
+		</script>
+	<?php endif;?>
+<?php endif;?>

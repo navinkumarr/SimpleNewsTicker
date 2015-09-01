@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <newsticker_adminhtml_tickergroup_index>
+	<reference name="content">
+	  <block type="newsticker/adminhtml_tickergroup" name="tickergroup" />
+	</reference>
+  </newsticker_adminhtml_tickergroup_index>
+  <newsticker_adminhtml_tickertext_index>
+	<reference name="content">
+	  <block type="newsticker/adminhtml_tickertext" name="tickertext" />
+	</reference>
+  </newsticker_adminhtml_tickertext_index>
+</layout>
